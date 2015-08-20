@@ -12,11 +12,8 @@ package com.horncatstudios;
 public class MovingCat
 {
   //region public attributes
-  //! The movement in the x direction ( AKA moving left to right );
-  public int DX = 8;
-
-  //! The movement in the y direction ( AKA moving up and down );
-  public int DY = 2;
+  //! Speed of movement
+  public int Speed = 8;
 
   //endregion
 
@@ -34,7 +31,7 @@ public class MovingCat
    */
   public void left() {
     if( _leftPadding.length() > 0 ) {
-      int newPosition = _leftPadding.length() - DX;
+      int newPosition = _leftPadding.length() - Speed;
 
       _leftPadding = creatPaddingString(newPosition);
     }
@@ -47,7 +44,7 @@ public class MovingCat
    */
   public void right() {
     if( _leftPadding.length() < MAX_MOVEMENT_ON_RIGHT ) {
-      int newPosition = _leftPadding.length() + DX;
+      int newPosition = _leftPadding.length() + Speed;
 
       _leftPadding = creatPaddingString(newPosition);
     }
@@ -60,7 +57,7 @@ public class MovingCat
    */
   public void up() {
     if( _topPadding > 0 )
-      _topPadding = _topPadding - DY;
+      _topPadding = _topPadding - Speed;
 
     displayCat();
   }
@@ -70,14 +67,14 @@ public class MovingCat
    */
   public void down() {
     if( _topPadding <= MAX_MOVEMENT_GOING_DOWN )
-      _topPadding = _topPadding + DY;
+      _topPadding = _topPadding + Speed;
 
     displayCat();
   }
 
   /**
    * Prints the cats to the command prompt according to it's current position according to the
-   * \a DX and \a DY attributes (the speed in the left/right, up/down).
+   * \a Speed and \a Speed attributes (the speed in the left/right, up/down).
    */
   public void displayCat() {
     System.out.flush();

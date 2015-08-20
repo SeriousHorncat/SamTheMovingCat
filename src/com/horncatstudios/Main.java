@@ -30,8 +30,7 @@ public class Main {
         // Practice changing the numbers of the statements below
         //! NOTE:  dx is a way of changing how fast something is moving in the x direction (aka left and right )
         //         dy is a way of changing how fast something is moving in the y direction (aka up and down )
-        samTheCat.DX = 20;
-        samTheCat.DY = 20;
+        samTheCat.Speed = 20;
 
         samTheCat.left();
         samTheCat.right();
